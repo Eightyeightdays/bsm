@@ -51,6 +51,7 @@ export default function LoginAndSignUp(){
                 }
                 navigate("/home"); 
             }else{
+                console.log(data)
                 errorMessage.push("LOGIN DETAILS INCORRECT")
                 displayErrorMessage(errorMessage);
                 return;
@@ -169,7 +170,6 @@ export default function LoginAndSignUp(){
                     <button className="loginButton" type="submit" onClick={handleSignUp}>SIGN UP AND LOG IN</button>
                 </>
                 }
-                {/* <img className="logo" src={Logo} alt="Groupomania logo"></img> */}
                 <div className="logo">THE BONEHEAD COMPANY</div>
                 <FontAwesomeIcon icon={faSkull} className="skull" />
                 <button className="selectButton" type="button" onClick={changeUi}>{buttonLabel}</button> 

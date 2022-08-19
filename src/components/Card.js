@@ -74,7 +74,11 @@ export default function Card(props){
             <div className="card_header">
                 <p className="card_creator-id">Posted by: <strong>{userId}</strong></p>
                 <p className="card_date-posted">{dateCreated}{dateEdited && <strong> | Edited: {dateEdited}</strong>}</p>
-                <p className="card_title">{title}</p>
+                {params.postId !== postId ?
+                <Link to={`/post/${postId}`}>
+                    <p className="card_title">{title}</p>
+                </Link> :
+                <p className="card_title">{title}</p>}
                 {(currentUser === userId || admin === "true") && 
                     <FontAwesomeIcon icon={faBars} className="settingsIcon" onClick={()=> toggleSettings()}/>
                 }
