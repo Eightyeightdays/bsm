@@ -28,8 +28,8 @@ h1, h2{
 button:hover{
     cursor: pointer;
 }
-a:visited{
-    color: white;
+a, a:visited{
+    color: var(--tertiary);
 }
 .logo{
     /* width: 100%; */
