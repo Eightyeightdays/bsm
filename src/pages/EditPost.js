@@ -23,7 +23,7 @@ export default function EditPost(){
     const settings = createSettings("GET");
 
     useEffect(()=>{
-        fetch(`http://localhost:3001/post/${params.postId}`, settings)
+        fetch(`https://apeyeye.herokuapp.com/post/${params.postId}`, settings)
                 .then(handleErrors) 
                 .then(data => {
                     setPost(data);
@@ -51,7 +51,7 @@ export default function EditPost(){
 
         const settings = createSettings("PUT", false, formData);
     
-        fetch(`http://localhost:3001/post/${params.postId}`, settings)
+        fetch(`https://apeyeye.herokuapp.com/post/${params.postId}`, settings)
             .then(handleErrors) 
             .then(response => {
                 URL.revokeObjectURL(src);   // Remove preview image URL from memory

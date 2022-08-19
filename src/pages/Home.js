@@ -10,7 +10,7 @@ export default function Home(){
     const settings = createSettings("GET")
     
     useEffect(() => {
-        fetch("http://localhost:3001/post", settings)
+        fetch("https://apeyeye.herokuapp.com/post", settings)
             .then(handleErrors)
             .then(response => {
                 setPosts(response);
@@ -21,10 +21,10 @@ export default function Home(){
     const handleDelete = (id)=>{
         const delSettings = createSettings("DELETE")
 
-        fetch(`http://localhost:3001/post/${id}`, delSettings)
+        fetch(`https://apeyeye.herokuapp.com/post/${id}`, delSettings)
         .then(handleErrors)
         .then(response => {
-            fetch("http://localhost:3001/post", settings)
+            fetch("https://apeyeye.herokuapp.com/post", settings)
             .then(handleErrors)
             .then(response => {
                 setPosts(response);

@@ -9,7 +9,7 @@ export default function LogOutButton(){
     const settings = createSettings("POST")
 
     function handleLogOut(){
-        fetch("http://localhost:3001/auth/logout", settings)
+        fetch("https://apeyeye.herokuapp.com/auth/logout", settings)
         .then(handleErrors)
         .then(response =>{
             Cookies.remove("userId");

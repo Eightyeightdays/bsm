@@ -14,7 +14,7 @@ export default function DisplaySinglePost(){
     const settings = createSettings("GET");
   
    useEffect(() => {
-       fetch(`http://localhost:3001/post/${params.postId}`, settings)
+       fetch(`https://apeyeye.herokuapp.com/post/${params.postId}`, settings)
        .then(handleErrors)
        .then(post => {setPost(post)}) 
        .catch(error => console.log(error))
@@ -23,7 +23,7 @@ export default function DisplaySinglePost(){
     const handleDelete = (id)=>{
         const settings = createSettings("DELETE");
 
-        fetch(`http://localhost:3001/post/${id}`, settings)
+        fetch(`https://apeyeye.herokuapp.com/post/${id}`, settings)
         .then(handleErrors)
         .then(response => {
             navigate("/home");

@@ -38,7 +38,7 @@ export default function LoginAndSignUp(){
 
         const settings = createSettings("POST", true, JSON.stringify(user))
         
-        fetch("http://localhost:3001/auth/login", settings)
+        fetch("https://apeyeye.herokuapp.com/auth/login", settings)
         .then(handleErrors)
         .then(data =>{
             if(data.token){
@@ -114,10 +114,10 @@ export default function LoginAndSignUp(){
 
         const settings = createSettings("POST", true, JSON.stringify(user));
     
-        fetch("http://localhost:3001/auth/signup", settings)
+        fetch("https://apeyeye.herokuapp.com/auth/signup", settings)
         .then(handleErrors)
         .then(response => {
-            fetch("http://localhost:3001/auth/login", settings)
+            fetch("https://apeyeye.herokuapp.com/auth/login", settings)
             .then(handleErrors)
             .then(data =>{
                 if(data.token){

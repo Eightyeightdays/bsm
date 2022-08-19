@@ -30,7 +30,7 @@ export default function CreatePost(){
 
         const settings = createSettings("POST", false, formData)
 
-        fetch("http://localhost:3001/post", settings)  
+        fetch("https://apeyeye.herokuapp.com/post", settings)  
         .then(handleErrors)
         .then(response => {
             URL.revokeObjectURL(src);   // Remove preview image URL from memory

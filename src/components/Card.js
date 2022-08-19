@@ -44,7 +44,7 @@ export default function Card(props){
 
     function reactToPost(type){
         const settings = createSettings("POST", true, JSON.stringify({type: type, userId: Cookies.get("userId")}))
-        fetch(`http://localhost:3001/post/${postId}/react`, settings)
+        fetch(`https://apeyeye.herokuapp.com/post/${postId}/react`, settings)
         .then(handleErrors)
         .then(function (data) {
             setCountReactions(data.reactionCount);
